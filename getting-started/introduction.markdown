@@ -11,8 +11,8 @@ Trong tài liệu hướng dẫn này, bạn sẽ được học các thành ph�
 
 Yêu cầu của tài liệu là bạn phải cài thành công:
 
-* Elixir phiên bản 1.5.0 trở lên
-* Erlang/OTP phiên bản 19 trở lên
+* Elixir phiên bản 1.11.0 trở lên
+* Erlang/OTP phiên bản 22 trở lên
 
 Hãy bắt đầu!
 
@@ -71,7 +71,7 @@ Sau này chúng ta sẽ học cách biên dịch mã Elixir (trong [Chương 8](
 
 Trong khi đọc tài liệu hướng dẫn này, thường bạn sẽ có các thắc mắc; suy cho cùng đó là một phần của quá trình học! Có nhiều nơi cho bạn đưa ra câu hỏi, sau đây là một trong số đó:
 
-* [Official #elixir on irc.libera.chat](irc://irc.libera.chat/elixir)
+* [#elixir on irc.libera.chat](irc://irc.libera.chat/elixir)
 * [Elixir Forum](http://elixirforum.com)
 * [Elixir on Slack](https://elixir-slackin.herokuapp.com/)
 * [Elixir on Discord](https://discord.gg/elixir)
