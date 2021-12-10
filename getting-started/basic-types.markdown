@@ -1,7 +1,7 @@
 ---
 section: getting-started
 layout: getting-started
-title: Basic types
+title: 2. Các kiểu cơ bản
 ---
 
 In this chapter we will learn more about Elixir basic types: integers, floats, booleans, atoms, strings, lists and tuples. Some basic types are:
