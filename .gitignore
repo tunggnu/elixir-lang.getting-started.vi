@@ -4,3 +4,6 @@
 /downloads/cheatsheets/*.log
 /.bundle
 /vendor
+workspace.code-workspace
+/try-out
+.ruby-version
