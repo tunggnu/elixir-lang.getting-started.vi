@@ -1,20 +1,20 @@
 ---
 section: getting-started
 layout: getting-started
-title: Introduction
+title: 1. Giới thiệu
 ---
 {% assign stable = site.data.elixir-versions[site.data.elixir-versions.stable] %}
 
-Welcome!
+Xin chào!
 
-In this tutorial, we are going to teach you about Elixir fundamentals - the language syntax, how to define modules, how to manipulate the characteristics of common data structures, and more. This chapter will focus on ensuring that Elixir is installed and that you can successfully run Elixir's Interactive Shell, called IEx.
+Trong tài liệu hướng dẫn này, bạn sẽ được học các thành phần căn bản của Elixir - cú pháp ngôn ngữ, cách định nghĩa mô-đun, cách thao tác trên các cấu trúc dữ liệu phổ biến v.v. Chương này tập trung vào việc cài đặt Elixir và cách tương tác với Elixir bằng giao diện IEx (Elixir's Interactive Shell, một chương trình chạy ở chế độ dòng lệnh).
 
-Our requirements are (see `elixir -v`):
+Yêu cầu của tài liệu là bạn phải cài thành công:
 
-  * Elixir 1.5.0 onwards
-  * Erlang/OTP 19 onwards
+* Elixir phiên bản 1.5.0 trở lên
+* Erlang/OTP phiên bản 19 trở lên
 
-Let's get started!
+Hãy bắt đầu!
 
 > If you find any errors in the tutorial or on the website, [please report a bug or send a pull request to our issue tracker](https://github.com/elixir-lang/elixir-lang.github.com).
 
@@ -24,17 +24,15 @@ Let's get started!
 >   * [Mix and OTP guide](https://elixir-lang.org/downloads/books/mix-and-otp.epub)
 >   * [Meta-programming guide](https://elixir-lang.org/downloads/books/meta-programming-in-elixir.epub)
 
-## Installation
+## Cài đặt
 
-If you haven't yet installed Elixir, visit our [installation page](/install.html). Once you are done, you can run `elixir --version` to get the current Elixir version.
+Nếu bạn chưa cài Elixir, hãy xem [trang cài đặt](/install.html) của chúng tôi. Khi cài xong, bạn có thể chạy lệnh `elixir --version` để xác nhận phiên bản của Elixir và Erlang có thỏa mãn yêu cầu hay không.
 
-## Interactive mode
+## Chế độ tương tác
 
-When you install Elixir, you will have three new executables: `iex`, `elixir` and `elixirc`. If you compiled Elixir from source or are using a packaged version, you can find these inside the `bin` directory.
+Sau khi cài Elixir bạn sẽ có ba chương trình sau: `iex`, `elixir` và `elixirc`. Nếu bạn biên dịch Elixir từ mã nguồn chứ không dùng bộ cài, các chương trình đó sẽ nằm trong thư mục `bin`.
 
-For now, let's start by running `iex` (or `iex.bat` if you are on Windows PowerShell, where `iex` is a PowerShell command) which stands for Interactive Elixir. In interactive mode, we can type any Elixir expression and get its result. Let's warm up with some basic expressions.
-
-Open up `iex` and type the following expressions:
+Bây giờ hãy bắt đầu bằng cách gõ lệnh `iex` (hoặc `iex.bat` nếu bạn dùng Windows PowerShell) để mở chế độ tương tác của Elixir. Trong chế độ này chúng ta có thể gõ bất kỳ biểu thức nào và nhận về kết quả của nó. Hãy khởi động với một số biểu thức cơ bản sau:
 
 ```elixir
 Erlang/OTP {{ stable.minimum_otp }} [64-bit] [smp:2:2] [...]
@@ -46,41 +44,40 @@ iex(2)> "hello" <> " world"
 "hello world"
 ```
 
-Please note that some details like version numbers may differ a bit in your session; that's not important. From now on `iex` sessions will be stripped down to focus on the code. To exit `iex` press `Ctrl+C` twice.
+Lưu ý rằng một số chi tiết như số hiệu phiên bản có thể khác một chút trên máy tính của bạn, cái đó không quan trọng. Từ giờ, các phiên làm việc với `iex` sẽ được lược bớt các thông tin phụ (như số hiệu phiên bản trong ví dụ trên) để chỉ tập trung vào phần mã lệnh. Nếu muốn thoát `iex` hãy bấm tổ hợp phím `Ctrl+C` hai lần.
 
-It seems we are ready to go! We will use the interactive shell quite a lot in the next chapters to get a bit more familiar with the language constructs and basic types, starting in the next chapter.
+Có vẻ như chúng ta đã sẵn sàng để khởi hành! Trong các chương sau chúng ta sẽ dùng chế độ tương tác rất nhiều để làm quen thêm một chút các cấu trúc ngôn ngữ và kiểu dữ liệu cơ bản.
 
-> Note: if you are on Windows, you can also try `iex --werl` (`iex.bat --werl` on PowerShell) which may provide a better experience depending on which console you are using.
+> Lưu ý: nếu bạn dùng Windows, bạn cũng có thể gõ `iex --werl` (hoặc `iex.bat --werl` trong PowerShell) để có được trải nghiệm tốt hơn tùy vào giao diện dòng lệnh bạn đang dùng.
 
-## Running scripts
+## Chạy các tập lệnh
 
-After getting familiar with the basics of the language you may want to try writing simple programs. This can be accomplished by putting the following Elixir code into a file:
+Khi đã quen với các thành phần căn bản của ngôn ngữ, có thể bạn sẽ muốn thử viết các chương trình đơn giản. Nếu vậy bạn chỉ cần đặt các mã Elixir vào trong một tệp, ví dụ như mã sau:
 
 ```elixir
 IO.puts("Hello world from Elixir")
 ```
 
-Save it as `simple.exs` and execute it with `elixir`:
+Hãy lưu nó vào tệp `simple.exs` và thực thi nó bằng `elixir` như sau:
 
 ```console
 $ elixir simple.exs
 Hello world from Elixir
 ```
 
-Later on we will learn how to compile Elixir code (in [Chapter 8](/getting-started/modules-and-functions.html)) and how to use the Mix build tool (in the [Mix & OTP guide](/getting-started/mix-otp/introduction-to-mix.html)). For now, let's move on to [Chapter 2](/getting-started/basic-types.html).
+Sau này chúng ta sẽ học cách biên dịch mã Elixir (trong [Chương 8](/getting-started/modules-and-functions.html)) và cách dùng công cụ hỗ trợ biên dịch Mix (trong mục [hướng dẫn Mix và OTP](/getting-started/mix-otp/introduction-to-mix.html)). Còn bây giờ hãy chuyển sang [Chương 2](/getting-started/basic-types.html).
 
-## Asking questions
+## Cách đặt câu hỏi
 
-When going through this getting started guide, it is common to have questions; after all, that is part of the learning process! There are many places where you can ask questions, here are some of them:
+Trong khi đọc tài liệu hướng dẫn này, thường bạn sẽ có các thắc mắc; suy cho cùng đó là một phần của quá trình học! Có nhiều nơi cho bạn đưa ra câu hỏi, sau đây là một trong số đó:
 
-  * [Official #elixir on irc.libera.chat](irc://irc.libera.chat/elixir)
-  * [Elixir Forum](http://elixirforum.com)
-  * [Elixir on Slack](https://elixir-slackin.herokuapp.com/)
-  * [Elixir on Discord](https://discord.gg/elixir)
-  * [elixir tag on StackOverflow](https://stackoverflow.com/questions/tagged/elixir)
+* [Official #elixir on irc.libera.chat](irc://irc.libera.chat/elixir)
+* [Elixir Forum](http://elixirforum.com)
+* [Elixir on Slack](https://elixir-slackin.herokuapp.com/)
+* [Elixir on Discord](https://discord.gg/elixir)
+* [elixir tag on StackOverflow](https://stackoverflow.com/questions/tagged/elixir)
 
-When asking questions, remember these two tips:
+Khi đặt câu hỏi hãy nhớ hai mẹo sau:
 
-  * Instead of asking "how to do X in Elixir", ask "how to solve Y in Elixir". In other words, don't ask how to implement a particular solution, instead describe the problem at hand. Stating the problem gives more context and less bias for a correct answer.
-
-  * In case things are not working as expected, please include as much information as you can in your report, for example: your Elixir version, the code snippet and the error message alongside the error stacktrace. Use sites like [Gist](https://gist.github.com/) to paste this information.
+* Thay vì hỏi "thực hiện việc X như thế nào trong Elixir", hãy hỏi "giải quyết bài toán Y thế nào trong Elixir". Nói cách khác, đừng hỏi cách thực hiện một giải pháp cụ thể thế nào, mà hãy môt tả vấn đề đang gặp phải. Phát biểu vấn đề mang đến nhiều ngữ cảnh hơn và giúp tìm ra câu trả lời hợp lý hơn.
+* Trong tình huống có gì đó hoạt động không như mong muốn, hãy kèm theo báo cáo của bạn nhiều thông tin nhất có thể, ví dụ: số hiệu phiên bản Elixir, đoạn mã, thông báo lỗi cùng với dấu vết lỗi (stacktrace). Hãy dùng các trang web như [Gist](https://gist.github.com/) để đăng các thông tin đó.
