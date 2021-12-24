@@ -9,7 +9,7 @@ Xin chào!
 
 Trong tài liệu hướng dẫn này, bạn sẽ được học các thành phần căn bản của Elixir - cú pháp ngôn ngữ, cách định nghĩa mô-đun, cách thao tác trên các cấu trúc dữ liệu phổ biến v.v. Chương này tập trung vào việc cài đặt Elixir và cách tương tác với Elixir bằng giao diện IEx (Elixir's Interactive Shell, một chương trình chạy ở chế độ dòng lệnh).
 
-Yêu cầu của tài liệu là bạn phải cài thành công:
+Để có thể thực hành theo các ví dụ của tài liệu, bạn cần phải cài đặt sẵn:
 
 * Elixir phiên bản 1.11.0 trở lên
 * Erlang/OTP phiên bản 22 trở lên
